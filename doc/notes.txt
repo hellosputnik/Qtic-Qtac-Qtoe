@@ -1,0 +1,7 @@
+Considerations
+==============
+
+ * Smart pointers
+ * Abstraction on game board slots/spaces
+ * Rename to xy coordinates instead of NW, N, NE, etc.
+

@@ -7,7 +7,6 @@
 // STL headers
 #include <vector>
 
-// TODO: Determine if smart pointers are applicable here.
 template <typename T>
 struct GameBoard
 {
