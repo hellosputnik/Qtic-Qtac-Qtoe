@@ -7,9 +7,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // Set a fixed window size.
-    setFixedSize(300, 400);
-
     // The game is disabled upon start.
     ui->NWButton->setEnabled(false);
     ui->NButton->setEnabled(false);
