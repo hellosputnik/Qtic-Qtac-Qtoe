@@ -7,22 +7,21 @@
 // STL headers
 #include <vector>
 
-template <typename T>
 struct GameBoard
 {
-    T* northwest;
-    T* north;
-    T* northeast;
-    T* west;
-    T* center;
-    T* east;
-    T* southwest;
-    T* south;
-    T* southeast;
+    QPushButton* northwest;
+    QPushButton* north;
+    QPushButton* northeast;
+    QPushButton* west;
+    QPushButton* center;
+    QPushButton* east;
+    QPushButton* southwest;
+    QPushButton* south;
+    QPushButton* southeast;
 
-    std::vector<T*> all = { northwest, north,  northeast,
-                            west,      center, east,
-                            southwest, south,  southeast };
+    std::vector<QPushButton*> all = { northwest, north,  northeast,
+                                      west,      center, east,
+                                      southwest, south,  southeast };
 };
 
 class TicTacToe
