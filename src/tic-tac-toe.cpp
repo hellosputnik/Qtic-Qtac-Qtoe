@@ -67,6 +67,7 @@ bool TicTacToe::CheckWinCondition()
         board_->center->text() == board_->southwest->text())
         return true;
 
+    // If no win conditions have been fulfilled, return false.
     return false;
 }
 
