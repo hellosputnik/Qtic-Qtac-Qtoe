@@ -55,7 +55,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->north->text() == game_board_->northeast->text() &&
         game_board_->north->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->north->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->north->text() + " wins!");
         return;
     }
 
@@ -65,7 +65,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->center->text() == game_board_->east->text() &&
         game_board_->center->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->center->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->center->text() + " wins!");
         return;
     }
 
@@ -75,7 +75,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->south->text() == game_board_->southeast->text() &&
         game_board_->south->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->south->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->south->text() + " wins!");
         return;
     }
 
@@ -85,7 +85,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->west->text() == game_board_->southwest->text() &&
         game_board_->west->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->west->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->west->text() + " wins!");
         return;
     }
 
@@ -95,7 +95,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->center->text() == game_board_->south->text() &&
         game_board_->center->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->center->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->center->text() + " wins!");
         return;
     }
 
@@ -105,7 +105,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->east->text() == game_board_->southeast->text() &&
         game_board_->east->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->east->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->east->text() + " wins!");
         return;
     }
 
@@ -115,7 +115,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->center->text() == game_board_->southeast->text() &&
         game_board_->center->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->center->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->center->text() + " wins!");
         return;
     }
 
@@ -125,7 +125,7 @@ void TicTacToe::CheckWinCondition()
         game_board_->center->text() == game_board_->southwest->text() &&
         game_board_->center->text() != "") {
         std::for_each(game_board_->all.begin(), game_board_->all.end(), disable);
-        output_label_->setText(game_board_->center->text() + " wins!");
+        output_label_->setText("Game over! " + game_board_->center->text() + " wins!");
         return;
     }
 
