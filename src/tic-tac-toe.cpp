@@ -128,6 +128,14 @@ void TicTacToe::CheckWinCondition()
         output_label_->setText(game_board_->center->text() + " wins!");
         return;
     }
+
+    // Check if all spaces have been occupied.
+    auto tie = [] (QPushButton* button) { return !button->isEnabled(); };
+
+    // If all buttons have been disabled and the code reaches this section,
+    // we can conclude that the game has ended in a tie.
+    if (std::all_of(game_board_->all.begin(), game_board_->all.end(), tie))
+        output_label_->setText("Cat's game! Draw! Tie!");
 }
 
 Player TicTacToe::GetCurrentPlayer()
