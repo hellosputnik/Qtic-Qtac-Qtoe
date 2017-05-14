@@ -27,6 +27,9 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QPushButton" name="NWButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -48,6 +51,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="NButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -66,6 +72,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="NEButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -84,6 +93,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="WButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -102,6 +114,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="CButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -120,6 +135,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="EButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -138,6 +156,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="SWButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -156,6 +177,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="SButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -174,6 +198,9 @@
     </property>
    </widget>
    <widget class="QPushButton" name="SEButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>200</x>

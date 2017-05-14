@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "tic-tac-toe.h"
+
 namespace Ui {
     class MainWindow;
 }
@@ -12,10 +14,14 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
+
+    TicTacToe* game;
+
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
 private slots:
+
     void on_newGameButton_clicked();
     void on_NWButton_clicked();
     void on_NButton_clicked();
@@ -28,7 +34,9 @@ private slots:
     void on_SEButton_clicked();
 
 private:
+
     Ui::MainWindow *ui;
+
 };
 
 #endif // MAINWINDOW_H

@@ -5,18 +5,29 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    // Qt-related initialization code.
     ui->setupUi(this);
 
-    // The game is disabled upon start.
-    ui->NWButton->setEnabled(false);
-    ui->NButton->setEnabled(false);
-    ui->NEButton->setEnabled(false);
-    ui->WButton->setEnabled(false);
-    ui->CButton->setEnabled(false);
-    ui->EButton->setEnabled(false);
-    ui->SWButton->setEnabled(false);
-    ui->SButton->setEnabled(false);
-    ui->SEButton->setEnabled(false);
+    // Create a new game board. This game board will be managed by the
+    // Tic-Tac-Toe instance.
+    GameBoard *board = new GameBoard();
+
+    // Set each slot/space on the game board to a button.
+    board->northwest = ui->NWButton;
+    board->north     = ui->NButton;
+    board->northeast = ui->NEButton;
+    board->west      = ui->WButton;
+    board->center    = ui->CButton;
+    board->east      = ui->EButton;
+    board->southwest = ui->SWButton;
+    board->south     = ui->SButton;
+    board->southeast = ui->SEButton;
+
+    // Initialize the vector of slots/spaces.
+    board->Initialize();
+
+    // Create a new Tic-Tac-Toe instance.
+    game = new TicTacToe(ui->newGameButton, board);
 }
 
 MainWindow::~MainWindow()
@@ -26,98 +37,78 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_newGameButton_clicked()
 {
-    // The new game button is disabled as long as the game board is fresh.
-    ui->newGameButton->setEnabled(false);
-
-    // Clear the game board.
-    ui->NWButton->setText("");
-    ui->NWButton->setEnabled(true);
-    ui->NButton->setText("");
-    ui->NButton->setEnabled(true);
-    ui->NEButton->setText("");
-    ui->NEButton->setEnabled(true);
-    ui->WButton->setText("");
-    ui->WButton->setEnabled(true);
-    ui->CButton->setText("");
-    ui->CButton->setEnabled(true);
-    ui->EButton->setText("");
-    ui->EButton->setEnabled(true);
-    ui->SWButton->setText("");
-    ui->SWButton->setEnabled(true);
-    ui->SButton->setText("");
-    ui->SButton->setEnabled(true);
-    ui->SEButton->setText("");
-    ui->SEButton->setEnabled(true);
+    game->NewGame();
 }
 
 void MainWindow::on_NWButton_clicked()
 {
-    ui->NWButton->setText("X");
+    ui->NWButton->setText(game->GetCurrentPlayer());
     ui->NWButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_NButton_clicked()
 {
-    ui->NButton->setText("X");
+    ui->NButton->setText(game->GetCurrentPlayer());
     ui->NButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_NEButton_clicked()
 {
-    ui->NEButton->setText("X");
+    ui->NEButton->setText(game->GetCurrentPlayer());
     ui->NEButton->setEnabled(false);
 
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_WButton_clicked()
 {
-    ui->WButton->setText("X");
+    ui->WButton->setText(game->GetCurrentPlayer());
     ui->WButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_CButton_clicked()
 {
-    ui->CButton->setText("X");
+    ui->CButton->setText(game->GetCurrentPlayer());
     ui->CButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_EButton_clicked()
 {
-    ui->EButton->setText("X");
+    ui->EButton->setText(game->GetCurrentPlayer());
     ui->EButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_SWButton_clicked()
 {
-    ui->SWButton->setText("X");
+    ui->SWButton->setText(game->GetCurrentPlayer());
     ui->SWButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_SButton_clicked()
 {
-    ui->SButton->setText("X");
+    ui->SButton->setText(game->GetCurrentPlayer());
     ui->SButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
 
 void MainWindow::on_SEButton_clicked()
 {
-    ui->SEButton->setText("X");
+    ui->SEButton->setText(game->GetCurrentPlayer());
     ui->SEButton->setEnabled(false);
-
-    ui->newGameButton->setEnabled(true);
+    game->CheckWinCondition();
+    game->ChangeTurn();
 }
