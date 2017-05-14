@@ -11,8 +11,8 @@ TicTacToe::TicTacToe()
     new_game_button_ = nullptr;
     board_           = nullptr;
     turn_            = 0;
-    players_[0]      = 'O';
-    players_[1]      = 'X';
+    players_[0]      = { .color = "orange", .character = "O" };
+    players_[1]      = { .color = "purple", .character = "X" };
 }
 
 TicTacToe::TicTacToe(QPushButton *new_game_button, GameBoard* board)
@@ -20,8 +20,8 @@ TicTacToe::TicTacToe(QPushButton *new_game_button, GameBoard* board)
     new_game_button_ = new_game_button;
     board_           = board;
     turn_            = 0;
-    players_[0]      = 'O';
-    players_[1]      = 'X';
+    players_[0]      = { "O", "orange" };
+    players_[1]      = { "X", "purple" };
 }
 
 TicTacToe::~TicTacToe()
@@ -109,9 +109,9 @@ void TicTacToe::CheckWinCondition()
     }
 }
 
-QChar TicTacToe::GetCurrentPlayer()
+Player TicTacToe::GetCurrentPlayer()
 {
-    // Based on the turn, return the player's character.
+    // Based on the turn, return the player.
     return players_[turn_];
 }
 

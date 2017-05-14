@@ -42,24 +42,35 @@ void MainWindow::on_newGameButton_clicked()
 
 void MainWindow::on_NWButton_clicked()
 {
-    ui->NWButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->NWButton->setText(player.character);
     ui->NWButton->setEnabled(false);
+    ui->NWButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }
 
 void MainWindow::on_NButton_clicked()
 {
-    ui->NButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->NButton->setText(player.character);
     ui->NButton->setEnabled(false);
+    ui->NButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }
 
 void MainWindow::on_NEButton_clicked()
 {
-    ui->NEButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->NEButton->setText(player.character);
     ui->NEButton->setEnabled(false);
+    ui->NEButton->setStyleSheet("color: " + player.color);
 
     game->CheckWinCondition();
     game->ChangeTurn();
@@ -67,48 +78,72 @@ void MainWindow::on_NEButton_clicked()
 
 void MainWindow::on_WButton_clicked()
 {
-    ui->WButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->WButton->setText(player.character);
     ui->WButton->setEnabled(false);
+    ui->WButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }
 
 void MainWindow::on_CButton_clicked()
 {
-    ui->CButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->CButton->setText(player.character);
     ui->CButton->setEnabled(false);
+    ui->CButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }
 
 void MainWindow::on_EButton_clicked()
 {
-    ui->EButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->EButton->setText(player.character);
     ui->EButton->setEnabled(false);
+    ui->EButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }
 
 void MainWindow::on_SWButton_clicked()
 {
-    ui->SWButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->SWButton->setText(player.character);
     ui->SWButton->setEnabled(false);
+    ui->SWButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }
 
 void MainWindow::on_SButton_clicked()
 {
-    ui->SButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->SButton->setText(player.character);
     ui->SButton->setEnabled(false);
+    ui->SButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }
 
 void MainWindow::on_SEButton_clicked()
 {
-    ui->SEButton->setText(game->GetCurrentPlayer());
+    Player player = game->GetCurrentPlayer();
+
+    ui->SEButton->setText(player.character);
     ui->SEButton->setEnabled(false);
+    ui->SEButton->setStyleSheet("color: " + player.color);
+
     game->CheckWinCondition();
     game->ChangeTurn();
 }

@@ -7,6 +7,12 @@
 // STL headers
 #include <vector>
 
+struct Player
+{
+    QString character;
+    QString color;
+};
+
 struct GameBoard
 {
     QPushButton* northwest; QPushButton* north;  QPushButton* northeast;
@@ -34,10 +40,10 @@ public:
     ~TicTacToe();
 
     // Tic-Tac-Toe methods
-    void  ChangeTurn();
-    void  CheckWinCondition();
-    QChar GetCurrentPlayer();
-    void  NewGame();
+    void   ChangeTurn();
+    void   CheckWinCondition();
+    Player GetCurrentPlayer();
+    void   NewGame();
 
 private:
 
@@ -45,7 +51,7 @@ private:
     QPushButton* new_game_button_;
     GameBoard*   board_;
     int          turn_;
-    QChar        players_[2];
+    Player       players_[2];
 
 };
 
