@@ -35,7 +35,7 @@ public:
 
     // Tic-Tac-Toe methods
     void  ChangeTurn();
-    bool  CheckWinCondition();
+    void  CheckWinCondition();
     QChar GetCurrentPlayer();
     void  NewGame();
 

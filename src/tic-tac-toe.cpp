@@ -39,76 +39,74 @@ void TicTacToe::ChangeTurn()
     new_game_button_->setEnabled(true);
 }
 
-bool TicTacToe::CheckWinCondition()
+void TicTacToe::CheckWinCondition()
 {
     // Disable the game board if a win condition has been met.
     auto disable = [] (QPushButton* button) { button->setEnabled(false); };
 
-    // Check if there is a row that belongs to a single player.
+    // If the upper row is owned by a single player, then the victory condition
+    // has been met.
     if (board_->northwest->text() == board_->north->text() &&
-        board_->north->text() == board_->northeast->text()) {
-        if (!board_->north->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
+        board_->north->text() == board_->northeast->text() &&
+        board_->north->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
     }
 
+    // If the middle row is owned by a single player, then the victory condition
+    // has been met.
     if (board_->west->text() == board_->center->text() &&
-        board_->center->text() == board_->east->text()) {
-        if (!board_->center->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
+        board_->center->text() == board_->east->text() &&
+        board_->center->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
     }
+
+    // If the lower row is owned by a single player, then the victory condition
+    // has been met.
     if (board_->southwest->text() == board_->south->text() &&
-        board_->south->text() == board_->southeast->text()) {
-        if (!board_->south->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
+        board_->south->text() == board_->southeast->text() &&
+        board_->south->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
     }
 
-    // Check if there is a column that belongs to a single player.
+    // If the left column is owned by a single player, then the victory
+    // condition has been met.
     if (board_->northwest->text() == board_->west->text() &&
-        board_->west->text() == board_->southwest->text()) {
-        if (!board_->west->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
+        board_->west->text() == board_->southwest->text() &&
+        board_->west->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
     }
+
+    // If the middle column is owned by a single player, then the victory
+    // condition has been met.
     if (board_->north->text() == board_->center->text() &&
-        board_->center->text() == board_->south->text()) {
-        if (!board_->center->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
+        board_->center->text() == board_->south->text() &&
+        board_->center->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
     }
+
+    // If the right column is owned by a single player, then the victory
+    // condition has been met.
     if (board_->northeast->text() == board_->east->text() &&
-        board_->east->text() == board_->southeast->text()) {
-        if (!board_->east->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
+        board_->east->text() == board_->southeast->text() &&
+        board_->east->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
     }
 
-    // Check if a single player diagonally owns board spaces.
+    // If a single player owns the spaces from upper left to lower right, then
+    // the victory condition has been met.
     if (board_->northwest->text() == board_->center->text() &&
-        board_->center->text() == board_->southeast->text()) {
-        if (!board_->center->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
-    }
-    if (board_->northeast->text() == board_->center->text() &&
-        board_->center->text() == board_->southwest->text()) {
-        if (!board_->center->text().isEmpty()) {
-            std::for_each(board_->all.begin(), board_->all.end(), disable);
-            return true;
-        }
+        board_->center->text() == board_->southeast->text() &&
+        board_->center->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
     }
 
-    // If no win conditions have been fulfilled, return false.
-    return false;
+    // If a single player owns the spaces from upper right to lower left, then
+    // the victory condition has been met.
+    if (board_->northeast->text() == board_->center->text() &&
+        board_->center->text() == board_->southwest->text() &&
+        board_->center->text() != "") {
+        std::for_each(board_->all.begin(), board_->all.end(), disable);
+    }
 }
 
 QChar TicTacToe::GetCurrentPlayer()
