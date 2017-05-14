@@ -2,6 +2,7 @@
 #define TICTACTOE_H
 
 // Qt headers
+#include <QLabel>
 #include <QPushButton>
 
 // STL headers
@@ -36,7 +37,7 @@ public:
 
     // Tic-Tac-Toe constructors and destructors
     TicTacToe();
-    TicTacToe(QPushButton* new_game_button, GameBoard* board);
+    TicTacToe(QPushButton* new_game_button, GameBoard* board, QLabel* output);
     ~TicTacToe();
 
     // Tic-Tac-Toe methods
@@ -49,7 +50,8 @@ private:
 
     // Tic-Tac-Toe data members
     QPushButton* new_game_button_;
-    GameBoard*   board_;
+    GameBoard*   game_board_;
+    QLabel*      output_label_;
     int          turn_;
     Player       players_[2];
 

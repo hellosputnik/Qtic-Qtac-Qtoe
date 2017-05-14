@@ -27,7 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     board->Initialize();
 
     // Create a new Tic-Tac-Toe instance.
-    game = new TicTacToe(ui->newGameButton, board);
+    game = new TicTacToe(ui->newGameButton, board, ui->label);
 }
 
 MainWindow::~MainWindow()
@@ -48,8 +48,8 @@ void MainWindow::on_NWButton_clicked()
     ui->NWButton->setEnabled(false);
     ui->NWButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_NButton_clicked()
@@ -60,8 +60,8 @@ void MainWindow::on_NButton_clicked()
     ui->NButton->setEnabled(false);
     ui->NButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_NEButton_clicked()
@@ -72,8 +72,8 @@ void MainWindow::on_NEButton_clicked()
     ui->NEButton->setEnabled(false);
     ui->NEButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_WButton_clicked()
@@ -84,8 +84,8 @@ void MainWindow::on_WButton_clicked()
     ui->WButton->setEnabled(false);
     ui->WButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_CButton_clicked()
@@ -96,8 +96,8 @@ void MainWindow::on_CButton_clicked()
     ui->CButton->setEnabled(false);
     ui->CButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_EButton_clicked()
@@ -108,8 +108,8 @@ void MainWindow::on_EButton_clicked()
     ui->EButton->setEnabled(false);
     ui->EButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_SWButton_clicked()
@@ -120,8 +120,8 @@ void MainWindow::on_SWButton_clicked()
     ui->SWButton->setEnabled(false);
     ui->SWButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_SButton_clicked()
@@ -132,8 +132,8 @@ void MainWindow::on_SButton_clicked()
     ui->SButton->setEnabled(false);
     ui->SButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
 
 void MainWindow::on_SEButton_clicked()
@@ -144,6 +144,6 @@ void MainWindow::on_SEButton_clicked()
     ui->SEButton->setEnabled(false);
     ui->SEButton->setStyleSheet("color: " + player.color);
 
-    game->CheckWinCondition();
     game->ChangeTurn();
+    game->CheckWinCondition();
 }
