@@ -2,6 +2,22 @@ Considerations
 ==============
 
  * Smart pointers
- * Abstraction on game board slots/spaces
+
+   I can probably use unique_ptr and move to manage my memory instead of regular
+   pointers.
+
+ * Abstraction of game board
+
+   m x n boards are common. What if the board was generated in a grid layout
+   instead of using a predefined board of a predefined size.
+
+ * Abstraction of game piece
+
+   There are various board games. If the game piece was abstract along with the
+   game board, the code might be reusable and we create checkers or chess.
+
  * Rename to xy coordinates instead of NW, N, NE, etc.
+
+   NW, N, NE, etc. would only work with a 3x3. Using xy coordinates would be
+   more flexible if the game board and pieces were generated.
 
