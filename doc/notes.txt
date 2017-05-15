@@ -14,10 +14,15 @@ Considerations
  * Abstraction of game piece
 
    There are various board games. If the game piece was abstract along with the
-   game board, the code might be reusable and we create checkers or chess.
+   game board, the code might be reusable and we can create checkers or chess.
 
  * Rename to xy coordinates instead of NW, N, NE, etc.
 
    NW, N, NE, etc. would only work with a 3x3. Using xy coordinates would be
    more flexible if the game board and pieces were generated.
+
+ * Custom characters for game pieces
+
+   Instead of alphabet characters, what if players could use an image or a
+   custom symbol. How hard is QPainter?
 
