@@ -8,7 +8,11 @@ Features
 --------
 
  * 2-player mode
- * Vs. AI
  * Colored Os and Xs
- * High score board
+
+Planned Features
+----------------
+
+ * Scoreboard
+ * Vs. AI
 
