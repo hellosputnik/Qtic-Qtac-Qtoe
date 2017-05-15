@@ -19,8 +19,14 @@ set (CMAKE_CXX_STANDARD 11)
 # Set C++ flags.
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${QtWidgets_EXECUTABLE_COMPILE_FLAGS}")
 
+# Set path to executable output.
+set (EXECUTABLE_OUTPUT_PATH ../bin)
+
 # Create an executable "tictactoe".
-add_executable (tictactoe main.cpp mainwindow.cpp tic-tac-toe.cpp)
+add_executable (tictactoe
+                ../src/main.cpp
+                ../src/mainwindow.cpp
+                ../src/tic-tac-toe.cpp)
 
 # Link libraries to the executable.
 target_link_libraries (tictactoe Qt5::Widgets)
