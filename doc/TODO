@@ -1,0 +1,8 @@
+TODO
+====
+
+ * Add a line edit to change the character
+ * Prevent players from choosing the same characters/colors
+ * Add simple "AI"
+ * Draw a line through the winning row/column/diagonal
+
