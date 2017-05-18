@@ -26,3 +26,9 @@ Considerations
    Instead of alphabet characters, what if players could use an image or a
    custom symbol. How hard is QPainter?
 
+ * Refactor win condition checks
+
+   Because tic-tac-toe is 3x3, the fact that the win condition check is brute
+   force does not really affect performance. However, on a larger board, the
+   win condition would need to be checked based on where the player last went.
+
