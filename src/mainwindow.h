@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+#include "settings.h"
 #include "tic-tac-toe.h"
 
 namespace Ui {
@@ -16,6 +17,7 @@ class MainWindow : public QMainWindow
 public:
 
     TicTacToe* game;
+    Settings settings;
 
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -32,6 +34,8 @@ private slots:
     void on_SWButton_clicked();
     void on_SButton_clicked();
     void on_SEButton_clicked();
+
+    void on_settingsButton_clicked();
 
 private:
 

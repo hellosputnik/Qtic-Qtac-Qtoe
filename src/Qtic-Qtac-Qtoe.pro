@@ -25,9 +25,12 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    tic-tac-toe.cpp
+    tic-tac-toe.cpp \
+    settings.cpp
 
 HEADERS  += mainwindow.h \
-    tic-tac-toe.h
+    tic-tac-toe.h \
+    settings.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    settings.ui

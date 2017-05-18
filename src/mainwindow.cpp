@@ -28,6 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // Create a new Tic-Tac-Toe instance.
     game = new TicTacToe(ui->newGameButton, board, ui->label);
+
+    // Initialize settings dialog.
+    settings.setModal(true);
+    settings.set_players(game->get_players());
 }
 
 MainWindow::~MainWindow()
@@ -38,6 +42,11 @@ MainWindow::~MainWindow()
 void MainWindow::on_newGameButton_clicked()
 {
     game->NewGame();
+}
+
+void MainWindow::on_settingsButton_clicked()
+{
+    settings.exec();
 }
 
 void MainWindow::on_NWButton_clicked()

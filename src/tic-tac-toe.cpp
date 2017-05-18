@@ -12,8 +12,9 @@ TicTacToe::TicTacToe()
     game_board_      = nullptr;
     output_label_    = nullptr;
     turn_            = 0;
-    players_[0]      = { "O", "orange"};
-    players_[1]      = { "X", "purple"};
+    players_         = new Player* [2];
+    players_[0]      = new Player { "O", "orange"};
+    players_[1]      = new Player { "X", "purple"};
 }
 
 TicTacToe::TicTacToe(QPushButton *button, GameBoard* game_board, QLabel* label)
@@ -22,8 +23,9 @@ TicTacToe::TicTacToe(QPushButton *button, GameBoard* game_board, QLabel* label)
     game_board_      = game_board;
     output_label_    = label;
     turn_            = 0;
-    players_[0]      = { "O", "orange" };
-    players_[1]      = { "X", "purple" };
+    players_         = new Player* [2];
+    players_[0]      = new Player { "O", "orange" };
+    players_[1]      = new Player { "X", "purple" };
 }
 
 TicTacToe::~TicTacToe()
@@ -141,7 +143,7 @@ void TicTacToe::CheckWinCondition()
 Player TicTacToe::GetCurrentPlayer()
 {
     // Based on the turn, return the player.
-    return players_[turn_];
+    return *players_[turn_];
 }
 
 void TicTacToe::NewGame()
@@ -163,4 +165,9 @@ void TicTacToe::NewGame()
 
     // Set the output label to notify the user of the new game.
     output_label_->setText("A new game has been started.");
+}
+
+Player** TicTacToe::get_players()
+{
+    return players_;
 }

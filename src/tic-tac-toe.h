@@ -46,6 +46,9 @@ public:
     Player GetCurrentPlayer();
     void   NewGame();
 
+    // Tic-Tac-Toe accessors and mutators
+    Player** get_players();
+
 private:
 
     // Tic-Tac-Toe data members
@@ -53,7 +56,7 @@ private:
     GameBoard*   game_board_;
     QLabel*      output_label_;
     int          turn_;
-    Player       players_[2];
+    Player**     players_;
 
 };
 
